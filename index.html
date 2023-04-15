@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="./jquery-3.4.1.slim.min.js"></script>
+    <meta charset="utf-8" />
+    <!-- Our javaScript  file -->
+    <script type="text/javascript" src="code/app.js"></script>
+    <script type="text/javascript" src="code/register.js"></script>
+    <script type="text/javascript" src="code/pre-game.js"></script>
+    <script type="text/javascript" src="code/login.js"></script>
+
+
+    <!-- Our CSS stylesheet file -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="registerStyle.css" />
+    <!-- Including the Lobster font from Google's Font Directory -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
+
+    <style>
+        canvas{
+            border: 10px solid black;
+            background: #1a1a1a;
+        }
+    </style>
+</head>
+
+<body>
+<div  id="header1">
+    <header>
+        Samuel Benichou & Lior Baruchovitch
+    </header>
+</div>
+<nav>
+    <div class="container">
+        <div class="menu" id="open-navbar1">
+            <ul class="list">
+                <li id="WelcomeTOPbutt" class="activeNav welcomeNav"><a  href="#" data-option="welcome"> Welcome</a></li>
+                <li id="RegisterTOPbutt" class="registerNav"><a  href="#" data-option="register"> Register</a></li>
+                <li id="LoginTOPbutt" class="loginNav"><a  href="#" data-option="login"> Login</a></li>
+                <li id="AboutTOPbutt" class="aboutNav"><a   href="#" data-option="about"> About</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--<footer> The game was created by Samuel. <a href="mailto:benichos@post.bgu.ac.il?subject=RetroPacman">Contact Us.</a></footer>-->
+
+<div id="main" class="container-fluid">
+    <section id="welcomeScreen" class="screen">
+        <div id="startOptionBott" class="startClass" align="center">
+            <li id="registerbutt" class="button"><a href="#lest" style="vertical-align:middle"> Register</a></li>
+            <li id="loginbutt" class="button"><a href="#lest" style="vertical-align:middle"> login</a></li>
+        </div>
+    </section>
+
+    <section id="loginSection" class="loginClass">
+        <div class="container">
+            <div class="form-group">
+                <div class="page-header">
+                    <p class="lead text-center">
+                        <i class="glyphicon glyphicon-log-in"></i> <h1>Welcome To Account Login Panel</h1>
+                        <br>
+                    </p>
+                </div>
+                <form id="loginForm" class="form-horizontal col-xs-4 col-xs-offset-4" role="form" method="post"
+                      action="">
+                    <label for="loginUserName"> <h3>User Name</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                        <input class="form-control" id="loginUserName" placeholder="User Name" type="text"
+                               name="loginUserName">
+                    </div>
+                    <label for="loginPassword"> <h3>Password</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </div>
+                        <input class="form-control" id="loginPassword" placeholder="Password" type="password"
+                               name="loginPassword">
+                    </div>
+
+                    <div class="form-row">
+                        <li onclick="startLoginCheck();return true;" id="login-submit-button" class="submitLoginbutton">
+                            <a href="#lest" type="submit" style="vertical-align:middle"> SUBMIT</a></li>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="registerSection" class="registerClass">
+        <div class="container">
+            <div class="form-group">
+                <div class="page-header">
+                    <p class="lead text-center">
+                        <i class="glyphicon glyphicon-log-in"></i><h1>Welcome To Account register Panel</h1>
+                    </p>
+                </div>
+                <br>
+                <form id="lregisterForm" class="form-horizontal col-xs-4 col-xs-offset-4" role="form" method="post"
+                      action="">
+                    <label for="loginUserName"> <h3>User Name</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                        <input class="form-control" id="registerUserName" placeholder="User Name" type="text"
+                               name="loginUserName">
+                    </div>
+                    <label for="loginPassword"> <h3>Password</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </div>
+                        <input class="form-control" id="registerPassword" placeholder="Password" type="password"
+                               name="loginPassword">
+                    </div>
+
+                    <label for="loginPassword"> <h3>First Name</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </div>
+                        <input class="form-control" id="registerFirstName" placeholder="FirstName" type="text"
+                               name="loginPassword">
+                    </div>
+
+                    <label for="loginPassword"> <h3>Last Name</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </div>
+                        <input class="form-control" id="registerLastName" placeholder="LastName" type="text"
+                               name="loginPassword">
+                    </div>
+
+                    <label for="loginPassword"> <h3>Email</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </div>
+                        <input class="form-control" id="registerEmail" placeholder="Email" type="text"
+                               name="loginPassword">
+                    </div>
+
+                    <label for="loginPassword"> <h3>Birth Day</h3></label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </div>
+                        <input class="form-control" id="registerBirthDat" placeholder="Birth Day" type="text"
+                               name="loginPassword">
+                    </div>
+
+                    <div class="form-row">
+                        <li onclick="startRegisterinCheck();return true;" id="register-submit-button" class="form-control btn btn-primary">
+                            <a href="#lest" type="submit" style="vertical-align:middle"> SUBMIT</a></li>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="aboutSection" class="aboutClass">
+        <div id="aboutBotInTop" class="aboutBox">
+            <div id="aboutBoxHeader" class="aboutBox">
+                <h1>  About Us </h1>
+            </div>
+            <br>
+            <div id="aboutBoxbody" class="aboutBox">
+                <h3>Created by Samuel and Lior </h3>
+                <h3> The jQuery we use in this assignment is Google's jquery.min.js</h3>
+                <h3>The main challenge in this assignment was definitely to deal with the learning of a new language.</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="preGameSection2" class="preGameClass2">
+        <div id="preGameArea" class="preGameAreaClass">
+            <div id="preGameArea1" class="preGameAreaClass2">
+                <form id="preGameForm" class="preGameFormClass">
+                    <label for="numberOfBalls"> <h3> Number of balls: (50-90)</h3> </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-menu-right"></i>
+                        </div>
+                        <input class="form-control" id="numberOfBalls" placeholder="Number of balls" type="number"
+                               name="numberOfBalls">
+                    </div>
+
+                    <label for="gameDuration"> <h3>Game duration: (60+)</h3> </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-menu-right"></i>
+                        </div>
+                        <input class="form-control" id="gameDuration" placeholder="Game duration" type="number"
+                               name="gameDuration">
+                    </div>
+
+                    <label for="numberOfMonsters"> <h3>Number of monsters: (1-4)</h3> </label>
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-menu-right"></i>
+                        </div>
+                        <input class="form-control" id="numberOfMonsters" placeholder="Number of monsters"
+                               type="number"
+                               name="numberOfMonsters">
+                    </div>
+                    <br>
+
+                    <div class="form-row">
+                        <li onclick="startGamePreChechData();return true;" id="enterGame-submit-button" class="submitEnterGamebutton">
+                            <a href="#lest"  type="submit" style="vertical-align:middle"> SUBMIT</a></li>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="preGameSection1" class="preGameClass1">
+        <div class="pageHeader">
+            <p id="preGameTitle"> <h1>Welcome To Pre Game Panel</h1> </p>
+            <br>
+            <p id="preGameinstractions1"> <h3>please choose game control settings:</h3> </p>
+            <p id="preGameinstractions2"> <h3>you have two options:  -custom control  -default control</h3></p>
+        </div>
+        <br>
+        <div class="form-row">
+            <li onclick="chooseCustomControl();return true;" id="customControlButtom" class="submitEnterGamebutton">
+                <a href="#lest"  type="submit" style="vertical-align:middle"> Custom Control</a></li>
+        </div>
+        <div class="form-row">
+            <li onclick="chooseDefaultControl();return true;" id="defaultControlButtom" class="submitEnterGamebutton">
+                <a href="#lest"  type="submit" style="vertical-align:middle"> Default Control</a></li>
+        </div>
+    </section>
+
+    <section id="gameSection" class="gameClass">
+        <div id="" class="" >
+            <button onclick="newGameFromTheGame();return true;" id="newGameButton" class="Gamebutton" style="vertical-align: middle">New Game</button>
+            <button onclick="restartGame();return true;" id="restartButton" class="Gamebutton" style="vertical-align: middle">Restart Game</button>
+        </div>
+        <div id="gameInfo" class="gameHeaderClass" align="center">
+            <h4>User:</h4>
+            <h5 id="userName"></h5>
+            <h3>SCORE:</h3>
+            <input id="lblScore" type="text"/>
+
+            <h3>TIME Paste:</h3>
+            <input id="lblTimePaste" type="text"/>
+            <h3>TIME LEFT:</h3>
+            <input id="lblTimeLeft" type="text"/>
+
+            <h3>Lives</h3>
+            <h5 id="lives"></h5>
+            <input id="lbllives" type="text"/>
+        </div>
+        <div id="canvasBackground" class="canvasBackgroundClass">
+            <div id="CanvasGameArea" class="canvasClass" align="center">
+                <canvas id="canvas" height="600" width="600" ></canvas>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="keyControlSection" class="keyControlClass">
+        <div id="instractionKeyControl" class="aboutBox">
+            <div id="instractionKeyControlHeader" class="aboutBox">
+                <h2>  pacman controls</h2>
+            </div>
+            <div id="instractionKeyControlbody" class="aboutBox">
+                to control the pacman please choose you keys control.
+                press the "choose" button and press on 4 keys on your keybord
+            </div>
+            <br>
+            <p> choose key between a-z A-Z or 0-9 </p>
+            <p> or the arrows buttons </p>
+        </div>
+        <div class="form-row">
+            <li onclick="gameControlChooseR();return true;" id="PacmanControl-choose-buttonR" class="submitEnterGamebutton">
+                <a href="#lest"   style="vertical-align:middle"> CHOOSE right button</a></li>
+            <br>
+            <li onclick="gameControlChooseL();return true;" id="PacmanControl-choose-buttonL" class="submitEnterGamebutton">
+                <a href="#lest"   style="vertical-align:middle"> CHOOSE left button</a></li>
+            <br>
+            <li onclick="gameControlChooseU();return true;" id="PacmanControl-choose-buttonU" class="submitEnterGamebutton">
+                <a href="#lest"   style="vertical-align:middle"> CHOOSE up button</a></li>
+            <br>
+            <li onclick="gameControlChooseD();return true;" id="PacmanControl-choose-buttonD" class="submitEnterGamebutton">
+                <a href="#lest"   style="vertical-align:middle"> CHOOSE down button</a></li>
+            <br>
+            <li onclick="startGameSubmit();return true;" id="startGame-button" class="submitEnterGamebutton">
+                <a href="#lest"  type="submit" style="vertical-align:middle"> Start GAME</a></li>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+        <footer> The game was created by Samuel and Lior. <a href="mailto:benichos@post.bgu.ac.il?subject=RetroPacman">Contact Us.</a></footer>
+    </section>
+</div>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function (e) {
+        $(".startClass").show();
+        $(".registerClass").hide();
+        $(".loginClass").hide();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide();
+        $(".gameClass").hide();
+        $(".aboutClass").hide();
+        $(".keyControlClass").hide();
+    });
+    /////////////////////////////////////////////////////////////main bottoms
+    $("#registerbutt").click(function () {
+        $(".startClass").hide();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide()
+        $(".gameClass").hide();
+        $(".loginClass").hide();
+        $(".registerClass").show();
+        $(".aboutClass").hide();
+        $(".keyControlClass").hide();
+    })
+
+    $("#loginbutt").click(function () {
+        $(".startClass").hide();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide()
+        $(".gameClass").hide();
+        $(".registerClass").hide();
+        $(".loginClass").show();
+        $(".aboutClass").hide();
+        $(".keyControlClass").hide();
+    })
+
+    ///////////////////////////////////////////////////////////////////////////////////// top bottoms
+    $("#AboutTOPbutt").click(function () {
+        $(".startClass").hide();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide()
+        $(".gameClass").hide();
+        $(".registerClass").hide();
+        $(".loginClass").hide();
+        $(".aboutClass").show();
+        $(".keyControlClass").hide();
+    })
+
+    $("#LoginTOPbutt").click(function () {
+        $(".startClass").hide();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide()
+        $(".gameClass").hide();
+        $(".registerClass").hide();
+        $(".loginClass").show();
+        $(".aboutClass").hide();
+        $(".keyControlClass").hide();
+    })
+
+    $("#RegisterTOPbutt").click(function () {
+        $(".startClass").hide();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide()
+        $(".gameClass").hide();
+        $(".registerClass").show();
+        $(".loginClass").hide();
+        $(".aboutClass").hide();
+        $(".keyControlClass").hide();
+    })
+
+    $("#WelcomeTOPbutt").click(function () {
+        $(".startClass").show();
+        $(".preGameClass1").hide();
+        $(".preGameClass2").hide()
+        $(".gameClass").hide();
+        $(".registerClass").hide();
+        $(".loginClass").hide();
+        $(".aboutClass").hide();
+        $(".keyControlClass").hide();
+    })
+
+</script>
+
+</body>
+</html>
