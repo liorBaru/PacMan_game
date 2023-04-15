@@ -9,9 +9,9 @@ The main challenge in this assignment was definitely to deal with the learning o
  3 - two kinds of monsters ! ,
      green is normal (1 life hit) , and pink monster is strong (2 life hit).</p>
 
-<h2>Enter game at:  login with userName: p , password: p</h2>
-<h3>login with: userName- "p" , password- "p"</h3>
+<h2>Enter game at:</h2>
 <p>https://liorbaru.github.io/PacMan_game/</p>
+<h3>login with: userName- "p" , password- "p"</h3>
 
 <img class="img1" src="img/siteGame1.png">
 <img class="img1" src="img/siteWelcome.png">
