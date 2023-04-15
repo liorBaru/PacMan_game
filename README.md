@@ -11,4 +11,5 @@ The main challenge in this assignment was definitely to deal with the learning o
 
 <h2>Enter game at:  login with userName: p , password: p</h2>
 <p></p>
-<img class="img1" src="img/dice6.png">
+<img class="img1" src="img/siteGame1.png">
+<img class="img1" src="img/siteWelcome.png">
